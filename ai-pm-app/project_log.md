@@ -9,7 +9,7 @@
 | 3단계 | DB 및 인증 연동 (Supabase) | ✅ 완료 |
 | 4단계 | 핵심 기능 구현 | ✅ 완료 |
 | 5단계 | 로컬 테스트 및 검증 | ✅ 완료 |
-| 6단계 | GitHub 연동 및 Vercel 배포 | 대기 |
+| 6단계 | GitHub 연동 및 Vercel 배포 | ✅ 완료 |
 
 ---
 
@@ -355,5 +355,33 @@ Supabase 대시보드에서 직접 설정해야 합니다:
 
 **다음 단계 계획:**
 - 6단계: GitHub 리포지토리 생성 및 Vercel 배포
+
+---
+
+### 2026-03-16 | 6단계: GitHub 연동 및 Vercel 배포
+
+**완료 일시**: 2026-03-16
+
+**작업 내용:**
+- 보안 검증: `.env`, `.claude/mcp.json`, `.mcp.json` 등 민감 파일 gitignore 처리 확인
+- `requirements.txt` → `dependencies.md` 이름 변경 (Vercel Python 오인 빌드 오류 수정)
+- `vercel.json` 추가: Vite 빌드 설정 및 SPA rewrite 명시
+- README.md 전면 업데이트 (기술스택, 에이전트 구조, 로컬 실행 방법, Supabase 설정)
+- `LLM API Spec.md` 작성: 모델/파라미터/시스템 프롬프트/라우팅 규칙 정리
+- GitHub push: https://github.com/Specialagent-kr/FC_AIPM_Practice.git (master)
+- Vercel 배포: https://aipmpractice.vercel.app
+
+**기능 개선 (동일 세션):**
+- 스트리밍 응답: `sendMessageStream()` 적용, 실시간 답변 표시 + 커서 애니메이션
+- 마크다운 렌더링: `remark-gfm` 플러그인 추가 (표/bold/취소선 정상 렌더링)
+- maxOutputTokens: 8192로 설정 (답변 잘림 방지)
+- 채팅 히스토리 패널: 왼쪽 사이드바에 세션 목록 표시, 세션 전환 기능
+- 채팅창 max-width 720px 가운데 정렬 적용
+- 파일 첨부 기능: PDF, DOCX, TXT, MD 지원
+- 디폴트 화면 인사말: "안녕하세요, {이름}님! AI PM 어시스턴트입니다."
+
+**배포 관련 추가 설정 필요:**
+- Supabase → Authentication → URL Configuration에 `https://aipmpractice.vercel.app` 추가 (OAuth 리다이렉트)
+- Vercel 환경변수 3개 등록: `VITE_GOOGLE_API_KEY`, `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`
 
 ---
