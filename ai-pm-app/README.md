@@ -1,6 +1,6 @@
 # AI PM 어시스턴트
 
-PM(Product Manager) 업무를 지원하는 멀티에이전트 AI 웹 앱입니다.
+PM(Product Manager) 업무를 지원하는 멀티에이전트 AI 입니다.
 
 ## 주요 기능
 
