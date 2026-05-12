@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(\"c:/Users/jinso/Desktop/Claude Code:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/jinso/Desktop/Claude Code Test/FC_AIPM_Practice/**)",
+      "Bash(done)",
+      "Bash(gh api:*)",
+      "mcp__supabase__restore_project"
     ]
   }
 }
